@@ -14,13 +14,7 @@ const initialValues = {
   surname: '',
   birthDate: '',
   homeAddress: '',
-  services: {
-    buyAndSell: '',
-    mortgageAndRent: '',
-    land: '',
-    house: '',
-    dailyRent: '',
-  },
+  services: [],
   otherServices: '',
   workHourFrom: '',
   workHourTo: '',
@@ -43,6 +37,24 @@ const initialValues = {
   wantToPayMoreForAttractingClients: '',
   budgetForAd: '',
   bestWayToAd: '',
+  doTheyUseFinancialSoftware: '',
+  financialSoftware: '',
+  areTheySatisfiedWithSoftware: '',
+	howMuchTheyPayForSoftware: '',
+  areTheyWillingToUseSoftware: '',
+  budgetToBuySoftware: '',
+  workAreas: '',
+  otherPreferedAreas: '',
+  doTheyColabInOtherAreas: '',
+  areTheyWillingToColab: '',
+  areTheyWillingToManage: '',
+	areTheyOkWithFiling: '',
+  finalComment: '',
+  WillTheyUsePillot: '',
+  fullName: '',
+  jobTitle: '',
+  organization: '',
+  date: '',
 };
 
 const Form = () => {
@@ -55,6 +67,14 @@ const Form = () => {
       [name]: value,
     });
   };
+
+	const handleCheckboxChange = (e)=> {
+		const { name } = e.target;
+		setValues({
+      ...values,
+      services: [].concat(name),
+    });
+	}
 
   console.log(values);
 
@@ -152,27 +172,27 @@ const Form = () => {
 
         <div className={styles.singleInput}>
           <label className={styles.label}> سمت : </label>
+          <label style={{ margin: '0px 10px' }} htmlFor="manager">
+            مدیر
+          </label>
           <input
             id="manager"
             type="radio"
             name="position"
-            value={values.position}
+            value="مدیر"
             onChange={handleInputChange}
           />
-          <label style={{ margin: '0px 10px' }} htmlFor="manager">
-            مدیر
-          </label>
 
+          <label style={{ margin: '0px 10px' }} htmlFor="consultant">
+            مشاور{' '}
+          </label>
           <input
             id="consultant"
             type="radio"
             name="position"
-            value={values.position}
+            value="مشاور"
             onChange={handleInputChange}
           />
-          <label style={{ margin: '0px 10px' }} htmlFor="consultant">
-            مشاور{' '}
-          </label>
         </div>
 
         <div className={styles.row}>
@@ -233,7 +253,7 @@ const Form = () => {
             <input
               type="checkbox"
               value={values.services.buyAndSell}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
               name="buyAndSell"
               id="buyAndSell"
             />
@@ -244,7 +264,7 @@ const Form = () => {
             <input
               type="checkbox"
               value={values.services.mortgageAndRent}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
               name="mortgageAndRent"
               id="mortgageAndRent"
             />
@@ -255,7 +275,7 @@ const Form = () => {
             <input
               type="checkbox"
               value={values.services.land}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
               name="land"
               id="land"
             />
@@ -266,7 +286,7 @@ const Form = () => {
             <input
               type="checkbox"
               value={values.services.house}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
               name="house"
               id="house"
             />
@@ -277,7 +297,7 @@ const Form = () => {
             <input
               type="checkbox"
               value={values.services.dailyRent}
-              onChange={handleInputChange}
+              onChange={handleCheckboxChange}
               name="dailyRent"
               id="dailyRent"
             />
@@ -380,9 +400,9 @@ const Form = () => {
               type="number"
               className={styles.shortInput}
               variant="filled"
-              value={values.clientsInPerson}
+              value={values.dailyInPersonClients}
               onChange={handleInputChange}
-              name="clientsInPerson"
+              name="dailyInPersonClients"
             />
           </div>
         </div>
@@ -501,9 +521,9 @@ const Form = () => {
               type="text"
               className={styles.input}
               variant="filled"
-              value={values.workWithOtherAdWebsites}
+              value={values.workWithAdWebsites}
               onChange={handleInputChange}
-              name="workWithOtherAdWebsites"
+              name="workWithAdWebsites"
             />
           </div>
         </div>
@@ -560,18 +580,31 @@ const Form = () => {
         </div>
 
         <div className={styles.row}>
-          <div>
+
             <label className={styles.label}>
               {' '}
               آیا تمایل دارید برای جذب مشتری بیشتر هزینه کنید ؟{' '}
             </label>
+						<div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
             <input
-              type="text"
-              className={styles.input}
-              variant="filled"
-              value={values.wantToPayMoreForAttractingClients}
-              onChange={handleInputChange}
+              id="yes"
+              type="radio"
               name="wantToPayMoreForAttractingClients"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="wantToPayMoreForAttractingClients"
+              value="خیر"
+              onChange={handleInputChange}
             />
           </div>
         </div>
@@ -605,6 +638,391 @@ const Form = () => {
               value={values.bestWayToAd}
               onChange={handleInputChange}
               name="bestWayToAd"
+            />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <label className={styles.label}>
+            در صورت استفاده از نرم افزار مالی اطلاعات زیر را تکمیل کنید.
+          </label>
+        </div>
+
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>
+              آیا از نرم افزار مالی استفاده میکنید ؟
+            </label>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="doTheyUseFinancialSoftware"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="doTheyUseFinancialSoftware"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>
+              * از چه نرم افزاری استفاده میکنید ؟
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              variant="filled"
+              value={values.financialSoftware}
+              onChange={handleInputChange}
+              name="financialSoftware"
+            />
+          </div>
+        </div>
+        <div className={styles.row}>
+
+            <label className={styles.label}>
+              * از عملکرد نرم افزار مورد استفاده راضی هستید ؟
+            </label>
+
+						<div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="areTheySatisfiedWithSoftware"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="areTheySatisfiedWithSoftware"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+
+						
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>
+              * برای نرم افزار چه مبلغی پرداخت میکنید ؟
+            </label>
+            <input
+              type="number"
+              className={styles.input}
+              variant="filled"
+              value={values.howMuchTheyPayForSoftware}
+              onChange={handleInputChange}
+              name="howMuchTheyPayForSoftware"
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          {' '}
+          <label className={styles.label}>
+            در صورت نداشتن نرم افزار حسابداری و مالی از قبل تمایل به استفاده از
+            یک نرم افزار مناسب و تخصصی برای شغلتان دارید ؟
+          </label>
+          <div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="areTheyWillingToUseSoftware"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="areTheyWillingToUseSoftware"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>
+              حاضر به پرداخت چه بودجه ای در قبال دریافت نرم افزار کاربردی مالی
+              هستید ؟
+            </label>
+            <input
+              type="number"
+              className={styles.input}
+              variant="filled"
+              value={values.budgetToBuySoftware}
+              onChange={handleInputChange}
+              name="budgetToBuySoftware"
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>در چه مناطقی فعالیت دارید ؟</label>
+            <input
+              type="text"
+              className={styles.input}
+              variant="filled"
+              value={values.workAreas}
+              onChange={handleInputChange}
+              name="workAreas"
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>
+              آیا تمایل به فعالیت در مناطق دیگر دارید؟ در صورت تمایل منطقه مورد
+              نظر را ذکر کنید .
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              variant="filled"
+              value={values.otherPreferedAreas}
+              onChange={handleInputChange}
+              name="otherPreferedAreas"
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <label className={styles.label}>
+            آیا با همکاران خود در منطقه و خارج از منطقه همکاری دارید؟
+          </label>
+          <div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="doTheyColabInOtherAreas"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="doTheyColabInOtherAreas"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <label className={styles.label}>
+            تمایل به همکاری و به اشتراک گذاری دو طرفه با رعایت شرایط مطمِن با
+            همکاران را دارید ؟
+          </label>
+          <div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="areTheyWillingToColab"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="areTheyWillingToColab"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>
+              تمایل به بررسی و مدیریت سیستمی مشاوران خود دارید ؟
+            </label>
+
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="areTheyWillingToManage"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="areTheyWillingToManage"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <label className={styles.label}>
+            آیا با فایل کردن و بایگانی سیستمی و دسترسی به تمام فایل ها در هر کجا
+            و هر زمان به صورت آنلاین و آفلاین موافق هستید ؟
+          </label>
+
+          <div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="areTheyOkWithFiling"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="areTheyOkWithFiling"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+        <div className={styles.row}>
+          <h4 className={styles.label}>
+            ممنون از توجه شما به توضیحات همکار گرامی پیلوت و صبوری و صداقت شما
+            در پاسخگویی به سوالات پرسشنامه .🌹
+          </h4>
+        </div>
+        <div className={styles.column}>
+          <label className={styles.label}>
+            لطفا نظر کلی خودتون رو در ارتباط با پیلوت بفرمایید تا ما بتوانیم
+            بیشتر در خدمت رسانی به شما تلاش کنیم .
+          </label>
+          <textarea
+            className={styles.longInput}
+            variant="filled"
+            value={values.finalComment}
+            onChange={handleInputChange}
+            name="finalComment"
+          />
+        </div>
+
+        <div className={styles.row}>
+          <label className={styles.label}>
+            با توجه به تمام توضیحات تمایل به همکاری با پیلوت را دارید ؟
+          </label>
+          <div>
+            <label style={{ margin: '0px 10px' }} htmlFor="yes">
+              بلی{' '}
+            </label>
+            <input
+              id="yes"
+              type="radio"
+              name="WillTheyUsePillot"
+              value="بلی"
+              onChange={handleInputChange}
+            />
+            <label style={{ margin: '0px 10px' }} htmlFor="no">
+              خیر{' '}
+            </label>
+            <input
+              id="no"
+              type="radio"
+              name="WillTheyUsePillot"
+              value="خیر"
+              onChange={handleInputChange}
+            />
+          </div>
+        </div>
+
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>اینجانب</label>
+            <input
+              type="text"
+              className={styles.input}
+              variant="filled"
+              value={values.fullName}
+              onChange={handleInputChange}
+              name="fullName"
+            />
+            <label className={styles.label}>به عنوان</label>
+            <input
+              type="text"
+              className={styles.input}
+              variant="filled"
+              value={values.jobTitle}
+              onChange={handleInputChange}
+              name="jobTitle"
+            />
+            <label className={styles.label}>در مجموعه</label>
+            <input
+              type="text"
+              className={styles.input}
+              variant="filled"
+              value={values.organization}
+              onChange={handleInputChange}
+              name="organization"
+            />
+            <label className={styles.label}>
+              اعلام میدارم که اطلاعات ابراز شده با دقت و رعایت اخلاق حرفه ای
+              تکمیل شده.
+            </label>
+          </div>
+        </div>
+        <div className={styles.row}>
+          <div>
+            <label className={styles.label}>تاریخ</label>
+            <input
+              placeholder="YYYY/MM/D"
+              className={styles.input}
+              variant="filled"
+              value={values.date}
+              onChange={handleInputChange}
+              name="date"
             />
           </div>
         </div>
