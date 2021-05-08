@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Vazir;
+  direction: rtl;
+  margin: 80px auto 50px;
+}
+
+.label {
+  font-size: 15px;
+  color: rgb(66, 66, 66);
+  font-weight: 600;
+}
+
+.input {
+  padding: 3px;
+  font-size: 1em;
+  color: rgb(66, 66, 66);
+  font-family: Vazir;
+  border: none;
+}
+
