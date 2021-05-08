@@ -65,6 +65,7 @@
   margin: 10px auto;
   box-shadow: 2px 2px 2px rgb(226, 225, 225);
   transition: width 1s;
+  text-align: center;
 }
 
 .longInput:focus {
@@ -76,5 +77,27 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+
+.shortInput {
+  padding: 3px 10px;
+  width: 70px;
+  font-size: 1em;
+  color: rgb(66, 66, 66);
+  font-family: Vazir;
+  border: none;
+  border-radius: 5px;
+  z-index: 10;
+  background-color: rgb(255, 255, 255);
+  margin: 10px 5px;
+  box-shadow: 2px 2px 2px rgb(226, 225, 225);
+  transition: width 1s;
+  text-align: center;
+}
+
+.shortInput:focus {
+  border-bottom: solid 2px #5970f3;
+  width: 80px;
 }
 
