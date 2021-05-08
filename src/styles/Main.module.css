@@ -1,3 +1,11 @@
+*{
+  outline: none;
+  box-sizing: border-box;
+  margin: 0px;
+  background-color: rgb(250, 250, 250);
+}
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -12,13 +20,61 @@
   font-size: 15px;
   color: rgb(66, 66, 66);
   font-weight: 600;
+  margin-left: 10px;
 }
 
 .input {
-  padding: 3px;
+  padding: 3px 10px;
+  width: 200px;
   font-size: 1em;
   color: rgb(66, 66, 66);
   font-family: Vazir;
   border: none;
+  border-radius: 5px;
+  z-index: 10;
+  background-color: rgb(255, 255, 255);
+  margin: 10px auto;
+  box-shadow: 2px 2px 2px rgb(226, 225, 225);
+  transition: width 1s;
+  text-align: center;
+}
+
+.input:focus {
+  border-bottom: solid 2px #5970f3;
+  width: 250px
+}
+
+.singleInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  align-items: center;
+  margin: 2px 20px;
+}
+
+.longInput {
+  padding: 3px 10px;
+  width: 350px;
+  font-size: 1em;
+  color: rgb(66, 66, 66);
+  font-family: Vazir;
+  border: none;
+  border-radius: 5px;
+  z-index: 10;
+  background-color: rgb(255, 255, 255);
+  margin: 10px auto;
+  box-shadow: 2px 2px 2px rgb(226, 225, 225);
+  transition: width 1s;
+}
+
+.longInput:focus {
+  border-bottom: solid 2px #5970f3;
+  width: 400px
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
