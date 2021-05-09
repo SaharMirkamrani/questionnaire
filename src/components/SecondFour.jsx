@@ -29,9 +29,9 @@ const SecondFour = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.surname}
+            value={values.lastname}
             onChange={handleInputChange}
-            name="surname"
+            name="lastname"
           />
         </div>
       </div>
@@ -56,9 +56,9 @@ const SecondFour = ({ handleInputChange, values }) => {
           <input
             className={styles.longInput}
             variant="filled"
-            value={values.homeAddress}
+            value={values.home_address}
             onChange={handleInputChange}
-            name="homeAddress"
+            name="home_address"
           />
         </div>
       </div>

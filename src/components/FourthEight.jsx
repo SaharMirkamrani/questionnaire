@@ -16,9 +16,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.adAdpproach}
+            value={values.broadcasting_way}
             onChange={handleInputChange}
-            name="adAdpproach"
+            name="broadcasting_way"
           />
         </div>
       </div>
@@ -36,9 +36,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.workWithAdWebsites}
+            value={values.advertising_websites}
             onChange={handleInputChange}
-            name="workWithAdWebsites"
+            name="advertising_websites"
           />
         </div>
       </div>
@@ -56,9 +56,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.doTheyUsePortals}
+            value={values.using_divar}
             onChange={handleInputChange}
-            name="doTheyUsePortals"
+            name="using_divar"
           />
         </div>
       </div>
@@ -76,9 +76,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.whatSitesTheyUse}
+            value={values.which_platforms}
             onChange={handleInputChange}
-            name="whatSitesTheyUse"
+            name="which_platforms"
           />
         </div>
       </div>
@@ -96,9 +96,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.longInput}
             variant="filled"
-            value={values.toAttractsClients}
+            value={values.advertising_system}
             onChange={handleInputChange}
-            name="toAttractsClients"
+            name="advertising_system"
           />
         </div>
       </div>
@@ -118,7 +118,7 @@ const FourthEight = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="wantToPayMoreForAttractingClients"
+            name="more_advertising"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -128,7 +128,7 @@ const FourthEight = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="wantToPayMoreForAttractingClients"
+            name="more_advertising"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -149,9 +149,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="number"
             className={styles.input}
             variant="filled"
-            value={values.budgetForAd}
+            value={values.advertising_budget}
             onChange={handleInputChange}
-            name="budgetForAd"
+            name="advertising_budget"
           />
         </div>
       </div>
@@ -169,9 +169,9 @@ const FourthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.bestWayToAd}
+            value={values.best_advertising}
             onChange={handleInputChange}
-            name="bestWayToAd"
+            name="best_advertising"
           />
         </div>
       </div>

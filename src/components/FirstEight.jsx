@@ -1,6 +1,7 @@
 import styles from '../styles/Main.module.css';
 
-const FirstEight = ({ handleInputChange, values }) => {
+const FirstEight = ({ handleInputChange, values, validatePhone, validateMobilephone, validateEmail }) => {
+  console.log(values)
   return (
     <>
       <div className={styles.row}>
@@ -14,9 +15,9 @@ const FirstEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.company}
+            value={values.center_name}
             onChange={handleInputChange}
-            name="centerName"
+            name="center_name"
           />
         </div>
 
@@ -29,9 +30,9 @@ const FirstEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.centerManager}
+            value={values.center_admin}
             onChange={handleInputChange}
-            name="centerManager"
+            name="center_admin"
           />
         </div>
       </div>
@@ -43,12 +44,14 @@ const FirstEight = ({ handleInputChange, values }) => {
             <div className={styles.alignLabels}> * تلفن ثابت : </div>
           </label>
           <input
+          
             type="number"
             className={styles.input}
             variant="filled"
-            value={values.phone}
+            value={values.telephone_number}
             onChange={handleInputChange}
-            name="phone"
+            name="telephone_number"
+            onBlur={()=>validatePhone(values.telephone_number)}
           />
         </div>
 
@@ -62,9 +65,10 @@ const FirstEight = ({ handleInputChange, values }) => {
             type="number"
             className={styles.input}
             variant="filled"
-            value={values.mobilePhone}
+            value={values.mobile_number}
             onChange={handleInputChange}
-            name="mobilePhone"
+            name="mobile_number"
+            onBlur={()=>validateMobilephone(values.mobile_number)}
           />
         </div>
       </div>
@@ -79,9 +83,10 @@ const FirstEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.website}
+            value={values.website_address}
             onChange={handleInputChange}
-            name="website"
+            name="website_address"
+            placeholder="sample.com"
           />
         </div>
 
@@ -94,9 +99,10 @@ const FirstEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.email}
+            value={values.email_address}
             onChange={handleInputChange}
-            name="email"
+            name="email_address"
+            onBlur={()=>validateEmail(values.email_address)}
           />
         </div>
       </div>
@@ -110,21 +116,21 @@ const FirstEight = ({ handleInputChange, values }) => {
           required
           className={styles.longInput}
           variant="filled"
-          value={values.address}
+          value={values.company_address}
           onChange={handleInputChange}
-          name="address"
+          name="company_address"
         />
       </div>
 
       <div className={styles.singleInput}>
-        <label className={styles.label}> سمت : </label>
+        <label className={styles.label}> <div className={styles.alignLabels}> سمت : </div></label>
         <label style={{ margin: '0px 10px' }} htmlFor="manager">
           مدیر
         </label>
         <input
           id="manager"
           type="radio"
-          name="position"
+          name="job_title"
           value="مدیر"
           onChange={handleInputChange}
         />
@@ -135,7 +141,7 @@ const FirstEight = ({ handleInputChange, values }) => {
         <input
           id="consultant"
           type="radio"
-          name="position"
+          name="job_title"
           value="مشاور"
           onChange={handleInputChange}
         />

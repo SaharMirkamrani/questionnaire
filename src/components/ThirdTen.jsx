@@ -10,9 +10,9 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="text"
             className={styles.longInput}
             variant="filled"
-            value={values.otherServices}
+            value={values.services_description}
             onChange={handleInputChange}
-            name="otherServices"
+            name="services_description"
           />
         </div>
       </div>
@@ -29,18 +29,22 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.workHourFrom}
+            value={values.job_hour_start}
             onChange={handleInputChange}
-            name="workHourFrom"
+            name="job_hour_start"
+            max="24"
+            min="1"
           />
           <label className={styles.label}>{'تا'}</label>
           <input
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.workHourTo}
+            value={values.job_hour_end}
             onChange={handleInputChange}
-            name="workHourTo"
+            name="job_hour_end"
+            max="24"
+            min="1"
           />
         </div>
       </div>
@@ -58,18 +62,22 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.responseHourFrom}
+            value={values.suport_hour_start}
             onChange={handleInputChange}
-            name="responseHourFrom"
+            name="suport_hour_start"
+            max="24"
+            min="1"
           />
           <label className={styles.label}>{'تا'}</label>
           <input
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.responseHourTo}
+            value={values.suport_hour_end}
             onChange={handleInputChange}
-            name="responseHourTo"
+            name="suport_hour_end"
+            max="24"
+            min="1"
           />
         </div>
       </div>
@@ -86,9 +94,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.consultantsInPerson}
+            value={values.advisors_count}
             onChange={handleInputChange}
-            name="consultantsInPerson"
+            name="advisors_count"
+            min="1"
           />
         </div>
       </div>
@@ -106,9 +115,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.consultantsOnline}
+            value={values.remoteadvisors}
             onChange={handleInputChange}
-            name="consultantsOnline"
+            name="remoteadvisors"
+            min="1"
           />
         </div>
       </div>
@@ -127,9 +137,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.dailyInPersonClients}
+            value={values.onboard_customer_count}
             onChange={handleInputChange}
-            name="dailyInPersonClients"
+            name="onboard_customer_count"
+            min="1"
           />
         </div>
       </div>
@@ -147,9 +158,9 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.dailyOnlineClients}
+            value={values.remote_customer_count}
             onChange={handleInputChange}
-            name="dailyOnlineClients"
+            name="remote_customer_count"
           />
         </div>
       </div>
@@ -169,9 +180,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.ownerCount}
+            value={values.sellers_count}
             onChange={handleInputChange}
-            name="ownerCount"
+            name="sellers_count"
+            min="1"
           />
           <label className={styles.label}> خریدار</label>
           <input
@@ -179,9 +191,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.buyerCount}
+            value={values.buyers_count}
             onChange={handleInputChange}
-            name="buyerCount"
+            name="buyers_count"
+            min="1"
           />
         </div>
       </div>
@@ -201,9 +214,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.renterCount}
+            value={values.renters_count}
             onChange={handleInputChange}
-            name="renterCount"
+            name="renters_count"
+            min="1"
           />
           <label className={styles.label}> مستاجر</label>
           <input
@@ -211,9 +225,10 @@ const ThirdTen = ({ handleInputChange, values }) => {
             type="number"
             className={styles.shortInput}
             variant="filled"
-            value={values.renteeCount}
+            value={values.tenant_count}
             onChange={handleInputChange}
-            name="renteeCount"
+            name="tenant_count"
+            min="1"
           />
         </div>
       </div>
@@ -229,11 +244,11 @@ const ThirdTen = ({ handleInputChange, values }) => {
           </label>
           <input
             type="text"
-            className={styles.longInput}
+            className={styles.input}
             variant="filled"
-            value={values.otherClients}
+            value={values.other_customers_count}
             onChange={handleInputChange}
-            name="otherClients"
+            name="other_customers_count"
           />
         </div>
       </div>

@@ -20,7 +20,7 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="doTheyUseFinancialSoftware"
+            name="user_accounting_software"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -31,7 +31,7 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="doTheyUseFinancialSoftware"
+            name="user_accounting_software"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -49,9 +49,9 @@ const FifthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.financialSoftware}
+            value={values.accounting_software_name}
             onChange={handleInputChange}
-            name="financialSoftware"
+            name="accounting_software_name"
           />
         </div>
       </div>
@@ -67,7 +67,7 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="areTheySatisfiedWithSoftware"
+            name="accounting_software_status"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -77,7 +77,7 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="areTheySatisfiedWithSoftware"
+            name="accounting_software_status"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -95,9 +95,10 @@ const FifthEight = ({ handleInputChange, values }) => {
             type="number"
             className={styles.input}
             variant="filled"
-            value={values.howMuchTheyPayForSoftware}
+            value={values.accounting_software_cost}
             onChange={handleInputChange}
-            name="howMuchTheyPayForSoftware"
+            name="accounting_software_cost"
+            min="1"
           />
         </div>
       </div>
@@ -116,7 +117,7 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="areTheyWillingToUseSoftware"
+            name="accounting_software_want"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -126,7 +127,7 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="areTheyWillingToUseSoftware"
+            name="accounting_software_want"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -143,9 +144,10 @@ const FifthEight = ({ handleInputChange, values }) => {
             type="number"
             className={styles.input}
             variant="filled"
-            value={values.budgetToBuySoftware}
+            value={values.payfor_accounting_software}
             onChange={handleInputChange}
-            name="budgetToBuySoftware"
+            name="payfor_accounting_software"
+            min="1"
           />
         </div>
       </div>
@@ -163,9 +165,9 @@ const FifthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.workAreas}
+            value={values.active_districts}
             onChange={handleInputChange}
-            name="workAreas"
+            name="active_districts"
           />
         </div>
       </div>
@@ -181,9 +183,9 @@ const FifthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.otherPreferedAreas}
+            value={values.future_districts}
             onChange={handleInputChange}
-            name="otherPreferedAreas"
+            name="future_districts"
           />
         </div>
       </div>

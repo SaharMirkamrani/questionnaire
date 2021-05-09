@@ -4,7 +4,7 @@ const LastNine = ({ handleInputChange, values }) => {
   return (
     <>
       <div className={styles.row}>
-        <div>
+      <div className={styles.singleInput}>
           <label className={styles.label}>
             آیا با همکاران خود در منطقه و خارج از منطقه همکاری دارید؟
           </label>
@@ -15,7 +15,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="doTheyColabInOtherAreas"
+            name="coworkers"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -25,7 +25,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="doTheyColabInOtherAreas"
+            name="coworkers"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -33,7 +33,7 @@ const LastNine = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+      <div className={styles.singleInput}>
           <label className={styles.label}>
             تمایل به همکاری و به اشتراک گذاری دو طرفه با رعایت شرایط مطمِن با
             همکاران را دارید ؟
@@ -45,7 +45,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="areTheyWillingToColab"
+            name="coworking"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -55,14 +55,14 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="areTheyWillingToColab"
+            name="coworking"
             value="خیر"
             onChange={handleInputChange}
           />
         </div>
       </div>
       <div className={styles.row}>
-        <div>
+      <div className={styles.singleInput}>
           <label className={styles.label}>
             تمایل به بررسی و مدیریت سیستمی مشاوران خود دارید ؟
           </label>
@@ -73,7 +73,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="areTheyWillingToManage"
+            name="employee_system"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -83,7 +83,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="areTheyWillingToManage"
+            name="employee_system"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -91,7 +91,7 @@ const LastNine = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+      <div className={styles.singleInput}>
           <label className={styles.label}>
             آیا با فایل کردن و بایگانی سیستمی و دسترسی به تمام فایل ها در هر کجا
             و هر زمان به صورت آنلاین و آفلاین موافق هستید ؟
@@ -103,7 +103,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="areTheyOkWithFiling"
+            name="online_datastorage"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -113,7 +113,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="areTheyOkWithFiling"
+            name="online_datastorage"
             value="خیر"
             onChange={handleInputChange}
           />
@@ -126,6 +126,7 @@ const LastNine = ({ handleInputChange, values }) => {
         </h4>
       </div>
       <div className={styles.column}>
+
         <label className={styles.label}>
           لطفا نظر کلی خودتون رو در ارتباط با پیلوت بفرمایید تا ما بتوانیم بیشتر
           در خدمت رسانی به شما تلاش کنیم .
@@ -134,14 +135,14 @@ const LastNine = ({ handleInputChange, values }) => {
           required
           className={styles.longInput}
           variant="filled"
-          value={values.finalComment}
+          value={values.offer}
           onChange={handleInputChange}
-          name="finalComment"
+          name="offer"
         />
-      </div>
+        </div>
 
       <div className={styles.row}>
-        <div>
+      <div className={styles.singleInput}>
           <label className={styles.label}>
             با توجه به تمام توضیحات تمایل به همکاری با پیلوت را دارید ؟
           </label>
@@ -152,7 +153,7 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="yes"
             type="radio"
-            name="WillTheyUsePillot"
+            name="cooperation"
             value="بلی"
             onChange={handleInputChange}
           />
@@ -162,62 +163,9 @@ const LastNine = ({ handleInputChange, values }) => {
           <input
             id="no"
             type="radio"
-            name="WillTheyUsePillot"
+            name="cooperation"
             value="خیر"
             onChange={handleInputChange}
-          />
-        </div>
-      </div>
-
-      <div className={styles.row}>
-        <div>
-          <label className={styles.label}>اینجانب</label>
-          <input
-            required
-            type="text"
-            className={styles.input}
-            variant="filled"
-            value={values.fullName}
-            onChange={handleInputChange}
-            name="fullName"
-          />
-          <label className={styles.label}>به عنوان</label>
-          <input
-            required
-            type="text"
-            className={styles.input}
-            variant="filled"
-            value={values.jobTitle}
-            onChange={handleInputChange}
-            name="jobTitle"
-          />
-          <label className={styles.label}>در مجموعه</label>
-          <input
-            required
-            type="text"
-            className={styles.input}
-            variant="filled"
-            value={values.organization}
-            onChange={handleInputChange}
-            name="organization"
-          />
-          <label className={styles.label}>
-            اعلام میدارم که اطلاعات ابراز شده با دقت و رعایت اخلاق حرفه ای تکمیل
-            شده.
-          </label>
-        </div>
-      </div>
-      <div className={styles.row}>
-        <div>
-          <label className={styles.label}>تاریخ</label>
-          <input
-            required
-            placeholder="YYYY/MM/D"
-            className={styles.input}
-            variant="filled"
-            value={values.date}
-            onChange={handleInputChange}
-            name="date"
           />
         </div>
       </div>

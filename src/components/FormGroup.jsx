@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '../styles/Main.module.css';
 import FirstEight from './FirstEight';
 import SecondFour from './SecondFour';
@@ -7,70 +7,68 @@ import ThirdTen from './ThirdTen';
 import FourthEight from './FourthEight';
 import FifthEight from './FifthEight';
 import LastNine from './LastNine';
+import axios from 'axios';
 
 const initialValues = {
-  centerName: '',
-  centerManager: '',
-  phone: '',
-  mobilePhone: '',
-  website: '',
-  email: '',
-  address: '',
-  position: '',
+  center_name: '',
+  center_admin: '',
+  telephone_number: '',
+  mobile_number: '',
+  website_address: '',
+  email_address: '',
+  company_address: '',
+  job_title: '',
   name: '',
-  surname: '',
+  lastname: '',
   birthDate: '',
-  homeAddress: '',
+  home_address: '',
   services: [],
-  otherServices: '',
-  workHourFrom: '',
-  workHourTo: '',
-  responseHourFrom: '',
-  responseHourTo: '',
-  consultantsInPerson: '',
-  consultantsOnline: '',
-  dailyInPersonClients: '',
-  dailyOnlineClients: '',
-  ownerCount: '',
-  buyerCount: '',
-  renterCount: '',
-  renteeCount: '',
-  otherClients: '',
-  adAdpproach: '',
-  workWithAdWebsites: '',
-  doTheyUsePortals: '',
-  whatSitesTheyUse: '',
-  toAttractsClients: '',
-  wantToPayMoreForAttractingClients: '',
-  budgetForAd: '',
-  bestWayToAd: '',
-  doTheyUseFinancialSoftware: '',
-  financialSoftware: '',
-  areTheySatisfiedWithSoftware: '',
-  howMuchTheyPayForSoftware: '',
-  areTheyWillingToUseSoftware: '',
-  budgetToBuySoftware: '',
-  workAreas: '',
-  otherPreferedAreas: '',
-  doTheyColabInOtherAreas: '',
-  areTheyWillingToColab: '',
-  areTheyWillingToManage: '',
-  areTheyOkWithFiling: '',
-  finalComment: '',
-  WillTheyUsePillot: '',
-  fullName: '',
-  jobTitle: '',
-  organization: '',
-  date: '',
+  services_description: '',
+  job_hour_start: '',
+  job_hour_end: '',
+  suport_hour_start: '',
+  suport_hour_end: '',
+  advisors_count: '',
+  remoteadvisors: '',
+  onboard_customer_count: '',
+  remote_customer_count: '',
+  sellers_count: '',
+  buyers_count: '',
+  renters_count: '',
+  tenant_count: '',
+  other_customers_count: '',
+  broadcasting_way: '',
+  advertising_websites: '',
+  using_divar: '',
+  which_platforms: '',
+  advertising_system: '',
+  more_advertising: '',
+  advertising_budget: '',
+  best_advertising: '',
+  user_accounting_software: '',
+  accounting_software_name: '',
+  accounting_software_status: '',
+  accounting_software_cost: '',
+  accounting_software_want: '',
+  payfor_accounting_software: '',
+  active_districts: '',
+  future_districts: '',
+  coworkers: '',
+  coworking: '',
+  employee_system: '',
+  online_datastorage: '',
+  offer: '',
+  cooperation: '',
+  time_stamp: '',
 };
 
 const Form = () => {
   const [values, setValues] = useState(initialValues);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
+    console.log(name, value);
+    setValues((prev) => {
+      return { ...prev, [name]: value };
     });
   };
 
@@ -91,44 +89,69 @@ const Form = () => {
     }
   };
 
+  const validatePhone = (input) => {
+    let phone = /^\d{8}$/;
+    if (input.match(phone)) {
+      return true;
+    } else {
+      alert('شماره تلفن باید 8 رقمی باشد');
+      return false;
+    }
+  };
+
+  const validateMobilephone = (input) => {
+    let mobile = /^\d{11}$/;
+    if (input.match(mobile)) {
+      return true;
+    } else {
+      alert('شماره موبایل باید 11 رقمی باشد');
+      return false;
+    }
+  };
+
+  const validateEmail = (mail) => {
+    if (
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        mail
+      )
+    ) {
+      return true;
+    }
+    alert('لطفا آدرس ایمیل صحیح را وارد کنید.');
+    return false;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit');
+    const article = values;
+    axios
+      .post('http://survey.pillot.ir/admin/Questionnaire/API/_getall', article)
+      .then((response) => console.log(response));
   };
+
+	//in the post request  header {token: "test"}
 
   console.log(values);
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className={styles.main}>
         <FirstEight
           handleInputChange={handleInputChange}
-          values={initialValues}
+          values={values}
+          validatePhone={validatePhone}
+          validateMobilephone={validateMobilephone}
+          validateEmail={validateEmail}
         />
-        <SecondFour
-          handleInputChange={handleInputChange}
-          values={initialValues}
-        />
-        <Checkbox
-          handleCheckboxChange={handleCheckboxChange}
-          values={initialValues}
-        />
-        <ThirdTen
-          handleInputChange={handleInputChange}
-          values={initialValues}
-        />
+        <SecondFour handleInputChange={handleInputChange} values={values} />
+        <Checkbox handleCheckboxChange={handleCheckboxChange} values={values} />
+        <ThirdTen handleInputChange={handleInputChange} values={values} />
         <FourthEight
-          handleCheckboxChange={handleCheckboxChange}
-          values={initialValues}
-        />
-        <FifthEight
           handleInputChange={handleInputChange}
-          values={initialValues}
+          values={values}
         />
-        <LastNine
-          handleInputChange={handleInputChange}
-          values={initialValues}
-        />
+        <FifthEight handleInputChange={handleInputChange} values={values} />
+        <LastNine handleInputChange={handleInputChange} values={values} />
       </div>
       <div className={styles.row}>
         <button

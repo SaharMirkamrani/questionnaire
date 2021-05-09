@@ -1,6 +1,7 @@
 import styles from '../styles/Main.module.css';
 
 const Checkbox = ({ handleCheckboxChange, values }) => {
+  
   return (
     <>
       <div className={styles.row}>

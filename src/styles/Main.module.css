@@ -25,17 +25,17 @@
 
 .alignLabels {
   width: 120px;
-  text-align: center;
+  text-align: right;
 }
 
 .biggerAlignLabels {
   width: 220px;
-  text-align: center;
+  text-align: right;
 }
 
 .hugeAlignLabels {
   width: 350px;
-  text-align: center;
+  text-align: right;
 }
 
 .input {
@@ -61,6 +61,7 @@
 
 .singleInput {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -134,7 +135,7 @@
   border-radius: 15px;
   font-family: Vazir;
   margin: 0px auto 50px;
-  font-size: 14px;
+  font-size: 16px;
   box-shadow: 2px 3px 3px rgb(187, 187, 187);
 }
 
