@@ -4,12 +4,15 @@ const FourthEight = ({ handleInputChange, values }) => {
   return (
     <>
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            از چه طریقی اطلاع رسانی میکنید ؟{' '}
+            <div className={styles.hugeAlignLabels}>
+              از چه طریقی اطلاع رسانی میکنید ؟{' '}
+            </div>
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
@@ -21,12 +24,15 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            آیا با سایت های تبلیغاتی کار میکنید ؟{' '}
+            <div className={styles.hugeAlignLabels}>
+              آیا با سایت های تبلیغاتی کار میکنید ؟{' '}
+            </div>
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
@@ -38,12 +44,15 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            آیا از پرتال های معرفی مثل دیوار استفاده میکنید ؟{' '}
+            <div className={styles.hugeAlignLabels}>
+              آیا از پرتال های معرفی مثل دیوار استفاده میکنید ؟{' '}
+            </div>
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
@@ -55,12 +64,15 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            از چه سایت هایی برای معرفی فایل ها استفاده میکنید ؟{' '}
+            <div className={styles.hugeAlignLabels}>
+              از چه سایت هایی برای معرفی فایل ها استفاده میکنید ؟{' '}
+            </div>
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
@@ -72,12 +84,15 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            جهت جذب مشتری چه تبلیغاتی انجام میدهید ؟{' '}
+            <div className={styles.hugeAlignLabels}>
+              جهت جذب مشتری چه تبلیغاتی انجام میدهید ؟{' '}
+            </div>
           </label>
           <input
+            required
             type="text"
             className={styles.longInput}
             variant="filled"
@@ -89,10 +104,12 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            آیا تمایل دارید برای جذب مشتری بیشتر هزینه کنید ؟{' '}
+            <div className={styles.hugeAlignLabels}>
+              آیا تمایل دارید برای جذب مشتری بیشتر هزینه کنید ؟{' '}
+            </div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -119,9 +136,16 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
-          <label className={styles.label}> چقدر بودجه تبلیغاتی دارید ؟ </label>
+        <div className={styles.singleInput}>
+          <label className={styles.label}>
+            {' '}
+            <div className={styles.biggerAlignLabels}>
+              {' '}
+              چقدر بودجه تبلیغاتی دارید ؟
+            </div>{' '}
+          </label>
           <input
+            required
             type="number"
             className={styles.input}
             variant="filled"
@@ -133,11 +157,15 @@ const FourthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
-            بهترین نوع تبلیغات برای کار شما چیست ؟
+            {' '}
+            <div className={styles.biggerAlignLabels}>
+              بهترین نوع تبلیغات برای کار شما چیست ؟
+            </div>
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"

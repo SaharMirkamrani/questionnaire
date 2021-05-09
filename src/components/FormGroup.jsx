@@ -91,6 +91,11 @@ const Form = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('submit');
+  };
+
   console.log(values);
 
   return (
@@ -124,6 +129,16 @@ const Form = () => {
           handleInputChange={handleInputChange}
           values={initialValues}
         />
+      </div>
+      <div className={styles.row}>
+        <button
+          type="submit"
+          onSubmit={handleSubmit}
+          className={styles.submitBtn}
+        >
+          {' '}
+          ثبت{' '}
+        </button>
       </div>
     </form>
   );

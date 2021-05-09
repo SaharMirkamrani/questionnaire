@@ -1,10 +1,9 @@
-*{
+* {
   outline: none;
   box-sizing: border-box;
   margin: 0px;
   background-color: rgb(248, 248, 248);
 }
-
 
 .main {
   display: flex;
@@ -29,6 +28,16 @@
   text-align: center;
 }
 
+.biggerAlignLabels {
+  width: 220px;
+  text-align: center;
+}
+
+.hugeAlignLabels {
+  width: 350px;
+  text-align: center;
+}
+
 .input {
   padding: 3px 10px;
   width: 200px;
@@ -47,13 +56,13 @@
 
 .input:focus {
   border-bottom: solid 2px #5970f3;
-  width: 250px
+  width: 250px;
 }
 
 .singleInput {
   display: flex;
   flex-direction: row;
-  justify-content: center ;
+  justify-content: center;
   align-items: center;
   margin: 2px 20px;
 }
@@ -76,7 +85,7 @@
 
 .longInput:focus {
   border-bottom: solid 2px #5970f3;
-  width: 400px
+  width: 400px;
 }
 
 .row {
@@ -116,6 +125,22 @@
   width: 80px;
 }
 
+.submitBtn {
+  width: 100px;
+  height: 50px;
+  color: white;
+  background-color: rgb(61, 61, 150);
+  border: none;
+  border-radius: 15px;
+  font-family: Vazir;
+  margin: 0px auto 50px;
+  font-size: 14px;
+  box-shadow: 2px 3px 3px rgb(187, 187, 187);
+}
+
+.submitBtn:hover {
+  background-color: rgb(34, 34, 124);
+}
 
 @media only screen and (max-width: 968px) {
   .row {
@@ -125,5 +150,4 @@
     align-items: center;
     text-align: center;
   }
-
 }

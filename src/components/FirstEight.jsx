@@ -10,6 +10,7 @@ const FirstEight = ({ handleInputChange, values }) => {
             <div className={styles.alignLabels}> نام مرکز : </div>
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
@@ -57,6 +58,7 @@ const FirstEight = ({ handleInputChange, values }) => {
             <div className={styles.alignLabels}>تلفن همراه :</div>{' '}
           </label>
           <input
+            required
             type="number"
             className={styles.input}
             variant="filled"
@@ -105,6 +107,7 @@ const FirstEight = ({ handleInputChange, values }) => {
           <div className={styles.alignLabels}> آدرس : </div>
         </label>
         <input
+          required
           className={styles.longInput}
           variant="filled"
           value={values.address}

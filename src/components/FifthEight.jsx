@@ -10,7 +10,7 @@ const FifthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             آیا از نرم افزار مالی استفاده میکنید ؟
           </label>
@@ -39,9 +39,11 @@ const FifthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
-            * از چه نرم افزاری استفاده میکنید ؟
+            <div className={styles.biggerAlignLabels}>
+              * از چه نرم افزاری استفاده میکنید ؟{' '}
+            </div>
           </label>
           <input
             type="text"
@@ -83,9 +85,11 @@ const FifthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
-            * برای نرم افزار چه مبلغی پرداخت میکنید ؟
+            <div className={styles.biggerAlignLabels}>
+              * برای نرم افزار چه مبلغی پرداخت میکنید ؟{' '}
+            </div>
           </label>
           <input
             type="number"
@@ -135,6 +139,7 @@ const FifthEight = ({ handleInputChange, values }) => {
             هستید ؟
           </label>
           <input
+            required
             type="number"
             className={styles.input}
             variant="filled"
@@ -146,9 +151,15 @@ const FifthEight = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-        <div>
-          <label className={styles.label}>در چه مناطقی فعالیت دارید ؟</label>
+        <div className={styles.singleInput}>
+          <label className={styles.label}>
+            {' '}
+            <div className={styles.biggerAlignLabels}>
+              در چه مناطقی فعالیت دارید ؟
+            </div>
+          </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
@@ -166,6 +177,7 @@ const FifthEight = ({ handleInputChange, values }) => {
             نظر را ذکر کنید .
           </label>
           <input
+            required
             type="text"
             className={styles.input}
             variant="filled"
