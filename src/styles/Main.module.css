@@ -24,6 +24,11 @@
   margin: 10px;
 }
 
+.alignLabels {
+  width: 120px;
+  text-align: center;
+}
+
 .input {
   padding: 3px 10px;
   width: 200px;
@@ -78,6 +83,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 5px;
+  align-items: center;
+  text-align: center;
 }
 
 .column {

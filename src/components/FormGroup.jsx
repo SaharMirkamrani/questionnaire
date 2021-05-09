@@ -40,7 +40,7 @@ const initialValues = {
   doTheyUseFinancialSoftware: '',
   financialSoftware: '',
   areTheySatisfiedWithSoftware: '',
-	howMuchTheyPayForSoftware: '',
+  howMuchTheyPayForSoftware: '',
   areTheyWillingToUseSoftware: '',
   budgetToBuySoftware: '',
   workAreas: '',
@@ -48,7 +48,7 @@ const initialValues = {
   doTheyColabInOtherAreas: '',
   areTheyWillingToColab: '',
   areTheyWillingToManage: '',
-	areTheyOkWithFiling: '',
+  areTheyOkWithFiling: '',
   finalComment: '',
   WillTheyUsePillot: '',
   fullName: '',
@@ -68,13 +68,23 @@ const Form = () => {
     });
   };
 
-	const handleCheckboxChange = (e)=> {
-		const { name } = e.target;
-		setValues({
-      ...values,
-      services: [].concat(name),
-    });
-	}
+  const handleCheckboxChange = (e) => {
+    const { name } = e.target;
+		if(e.target.checked) {
+			console.log("check")
+			setValues({
+				...values,
+				services: [...values.services, name],
+			});
+		} else {
+			console.log("uncheck");
+			setValues({
+				...values,
+				services: [...values.services, ]
+			})
+		}
+    
+  };
 
   console.log(values);
 
@@ -83,7 +93,7 @@ const Form = () => {
       <div className={styles.main}>
         <div className={styles.row}>
           <div className={styles.singleInput}>
-            <label className={styles.label}>نام مرکز : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}> نام مرکز : </div></label>
             <input
               type="text"
               className={styles.input}
@@ -95,7 +105,7 @@ const Form = () => {
           </div>
 
           <div className={styles.singleInput}>
-            <label className={styles.label}> * نام مدیر مرکز : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}> * نام مدیر مرکز :</div> </label>
             <input
               type="text"
               className={styles.input}
@@ -109,7 +119,7 @@ const Form = () => {
 
         <div className={styles.row}>
           <div className={styles.singleInput}>
-            <label className={styles.label}> * تلفن ثابت : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}> * تلفن ثابت : </div></label>
             <input
               type="number"
               className={styles.input}
@@ -121,7 +131,7 @@ const Form = () => {
           </div>
 
           <div className={styles.singleInput}>
-            <label className={styles.label}>تلفن همراه : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}>تلفن همراه :</div> </label>
             <input
               type="number"
               className={styles.input}
@@ -135,7 +145,7 @@ const Form = () => {
 
         <div className={styles.row}>
           <div className={styles.singleInput}>
-            <label className={styles.label}> * آدرس سایت : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}> * آدرس سایت : </div></label>
             <input
               type="text"
               className={styles.input}
@@ -147,7 +157,7 @@ const Form = () => {
           </div>
 
           <div className={styles.singleInput}>
-            <label className={styles.label}> * آدرس ایمیل : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}> * آدرس ایمیل :</div> </label>
             <input
               type="text"
               className={styles.input}
@@ -160,7 +170,7 @@ const Form = () => {
         </div>
 
         <div className={styles.singleInput}>
-          <label className={styles.label}> آدرس : </label>
+          <label className={styles.label}> <div className={styles.alignLabels}>  آدرس : </div></label>
           <input
             className={styles.longInput}
             variant="filled"
@@ -171,7 +181,7 @@ const Form = () => {
         </div>
 
         <div className={styles.singleInput}>
-          <label className={styles.label}> سمت : </label>
+          <label className={styles.label}>  سمت : </label>
           <label style={{ margin: '0px 10px' }} htmlFor="manager">
             مدیر
           </label>
@@ -197,7 +207,7 @@ const Form = () => {
 
         <div className={styles.row}>
           <div className={styles.singleInput}>
-            <label className={styles.label}>نام : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}>نام :</div> </label>
             <input
               type="text"
               className={styles.input}
@@ -209,7 +219,7 @@ const Form = () => {
           </div>
 
           <div className={styles.singleInput}>
-            <label className={styles.label}>نام خانوادگی : </label>
+            <label className={styles.label}><div className={styles.alignLabels}>  نام خانوادگی :</div> </label>
             <input
               type="text"
               className={styles.input}
@@ -223,7 +233,7 @@ const Form = () => {
 
         <div className={styles.row}>
           <div className={styles.singleInput}>
-            <label className={styles.label}> * تاریخ تولد : </label>
+            <label className={styles.label}> <div className={styles.alignLabels}>* تاریخ تولد :</div>  </label>
             <input
               placeholder="YYYY/MM/D"
               className={styles.input}
@@ -234,7 +244,7 @@ const Form = () => {
             />
           </div>
           <div className={styles.singleInput}>
-            <label className={styles.label}> * آدرس محل سکونت : </label>
+            <label className={styles.label}>  * آدرس محل سکونت : </label>
             <input
               className={styles.longInput}
               variant="filled"
@@ -580,12 +590,12 @@ const Form = () => {
         </div>
 
         <div className={styles.row}>
-
+          <div>
             <label className={styles.label}>
               {' '}
               آیا تمایل دارید برای جذب مشتری بیشتر هزینه کنید ؟{' '}
             </label>
-						<div>
+
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
@@ -692,12 +702,11 @@ const Form = () => {
           </div>
         </div>
         <div className={styles.row}>
-
+          <div>
             <label className={styles.label}>
               * از عملکرد نرم افزار مورد استفاده راضی هستید ؟
             </label>
 
-						<div>
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
@@ -718,8 +727,6 @@ const Form = () => {
               value="خیر"
               onChange={handleInputChange}
             />
-
-						
           </div>
         </div>
 
@@ -741,11 +748,12 @@ const Form = () => {
 
         <div className={styles.row}>
           {' '}
-          <label className={styles.label}>
-            در صورت نداشتن نرم افزار حسابداری و مالی از قبل تمایل به استفاده از
-            یک نرم افزار مناسب و تخصصی برای شغلتان دارید ؟
-          </label>
           <div>
+            <label className={styles.label}>
+              در صورت نداشتن نرم افزار حسابداری و مالی از قبل تمایل به استفاده
+              از یک نرم افزار مناسب و تخصصی برای شغلتان دارید ؟
+            </label>
+
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
@@ -817,10 +825,11 @@ const Form = () => {
         </div>
 
         <div className={styles.row}>
-          <label className={styles.label}>
-            آیا با همکاران خود در منطقه و خارج از منطقه همکاری دارید؟
-          </label>
           <div>
+            <label className={styles.label}>
+              آیا با همکاران خود در منطقه و خارج از منطقه همکاری دارید؟
+            </label>
+
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
@@ -845,11 +854,12 @@ const Form = () => {
         </div>
 
         <div className={styles.row}>
-          <label className={styles.label}>
-            تمایل به همکاری و به اشتراک گذاری دو طرفه با رعایت شرایط مطمِن با
-            همکاران را دارید ؟
-          </label>
           <div>
+            <label className={styles.label}>
+              تمایل به همکاری و به اشتراک گذاری دو طرفه با رعایت شرایط مطمِن با
+              همکاران را دارید ؟
+            </label>
+
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
@@ -902,12 +912,12 @@ const Form = () => {
         </div>
 
         <div className={styles.row}>
-          <label className={styles.label}>
-            آیا با فایل کردن و بایگانی سیستمی و دسترسی به تمام فایل ها در هر کجا
-            و هر زمان به صورت آنلاین و آفلاین موافق هستید ؟
-          </label>
-
           <div>
+            <label className={styles.label}>
+              آیا با فایل کردن و بایگانی سیستمی و دسترسی به تمام فایل ها در هر
+              کجا و هر زمان به صورت آنلاین و آفلاین موافق هستید ؟
+            </label>
+
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
@@ -951,10 +961,11 @@ const Form = () => {
         </div>
 
         <div className={styles.row}>
-          <label className={styles.label}>
-            با توجه به تمام توضیحات تمایل به همکاری با پیلوت را دارید ؟
-          </label>
           <div>
+            <label className={styles.label}>
+              با توجه به تمام توضیحات تمایل به همکاری با پیلوت را دارید ؟
+            </label>
+
             <label style={{ margin: '0px 10px' }} htmlFor="yes">
               بلی{' '}
             </label>
