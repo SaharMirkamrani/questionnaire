@@ -22,7 +22,7 @@ const initialValues = {
   lastname: '',
   birthDate: '',
   home_address: '',
-  services: [],
+  services: {},
   services_description: '',
   job_hour_start: '',
   job_hour_end: '',
@@ -59,7 +59,7 @@ const initialValues = {
   online_datastorage: '',
   offer: '',
   cooperation: '',
-  time_stamp: new Date().toLocaleString(),
+  time_stamp: '',
 };
 
 const Form = () => {
@@ -76,12 +76,12 @@ const Form = () => {
     if (e.target.checked) {
       setValues({
         ...values,
-        services: [...values.services, name],
+        services: { ...values.services, [name]: name },
       });
     } else {
       setValues({
         ...values,
-        services: [...values.services],
+        services: { ...values.services },
       });
     }
   };
@@ -131,10 +131,14 @@ const Form = () => {
           },
         }
       )
-      .then((response) => console.log(response))
+      .then((response) => console.log(response.config.data))
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  const setTimeStamp = () => {
+    setValues({ ...values, time_stamp: new Date().toLocaleString() });
   };
 
   console.log(values);
@@ -159,6 +163,7 @@ const Form = () => {
       <div className={styles.row}>
         <button
           type="submit"
+          onClick={setTimeStamp}
           onSubmit={handleSubmit}
           className={styles.submitBtn}
         >

@@ -4,12 +4,6 @@ const FifthEight = ({ handleInputChange, values }) => {
   return (
     <>
       <div className={styles.row}>
-        <label className={styles.label}>
-          در صورت استفاده از نرم افزار مالی اطلاعات زیر را تکمیل کنید.
-        </label>
-      </div>
-
-      <div className={styles.row}>
         <div className={styles.singleInput}>
           <label className={styles.label}>
             آیا از نرم افزار مالی استفاده میکنید ؟{' '}
@@ -39,69 +33,72 @@ const FifthEight = ({ handleInputChange, values }) => {
         </div>
       </div>
 
-      <div className={styles.row}>
-        <div className={styles.singleInput}>
-          <label className={styles.label}>
-            <div className={styles.biggerAlignLabels}>
-              از چه نرم افزاری استفاده میکنید ؟{' '}
-            </div>
-          </label>
-          <input
-            type="text"
-            className={styles.input}
-            value={values.accounting_software_name}
-            onChange={handleInputChange}
-            name="accounting_software_name"
-          />
-        </div>
-      </div>
-      <div className={styles.row}>
+      {values.user_accounting_software === 'بلی' && (
         <div>
-          <label className={styles.label}>
-            از عملکرد نرم افزار مورد استفاده راضی هستید ؟
-          </label>
-
-          <label style={{ margin: '0px 10px' }} htmlFor="yes">
-            بلی{' '}
-          </label>
-          <input
-            id="yes"
-            type="radio"
-            name="accounting_software_status"
-            value="بلی"
-            onChange={handleInputChange}
-          />
-          <label style={{ margin: '0px 10px' }} htmlFor="no">
-            خیر{' '}
-          </label>
-          <input
-            id="no"
-            type="radio"
-            name="accounting_software_status"
-            value="خیر"
-            onChange={handleInputChange}
-          />
-        </div>
-      </div>
-
-      <div className={styles.row}>
-        <div className={styles.singleInput}>
-          <label className={styles.label}>
-            <div className={styles.biggerAlignLabels}>
-              برای نرم افزار چه مبلغی پرداخت میکنید ؟{' '}
+          <div className={styles.row}>
+            <div className={styles.singleInput}>
+              <label className={styles.label}>
+                <div className={styles.biggerAlignLabels}>
+                  از چه نرم افزاری استفاده میکنید ؟{' '}
+                </div>
+              </label>
+              <input
+                type="text"
+                className={styles.input}
+                value={values.accounting_software_name}
+                onChange={handleInputChange}
+                name="accounting_software_name"
+              />
             </div>
-          </label>
-          <input
-            type="number"
-            className={styles.input}
-            variant="filled"
-            value={values.accounting_software_cost}
-            onChange={handleInputChange}
-            name="accounting_software_cost"
-            min="1"
-          />
+          </div>
+          <div className={styles.row}>
+            <div>
+              <label className={styles.label}>
+                از عملکرد نرم افزار مورد استفاده راضی هستید ؟
+              </label>
+
+              <label style={{ margin: '0px 10px' }} htmlFor="yes">
+                بلی{' '}
+              </label>
+              <input
+                id="yes"
+                type="radio"
+                name="accounting_software_status"
+                value="بلی"
+                onChange={handleInputChange}
+              />
+              <label style={{ margin: '0px 10px' }} htmlFor="no">
+                خیر{' '}
+              </label>
+              <input
+                id="no"
+                type="radio"
+                name="accounting_software_status"
+                value="خیر"
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div className={styles.singleInput}>
+              <label className={styles.label}>
+                <div className={styles.biggerAlignLabels}>
+                  برای نرم افزار چه مبلغی پرداخت میکنید ؟{' '}
+                </div>
+              </label>
+              <input
+                type="number"
+                className={styles.input}
+                variant="filled"
+                value={values.accounting_software_cost}
+                onChange={handleInputChange}
+                name="accounting_software_cost"
+                min="1"
+              />
+            </div>
+          </div>{' '}
         </div>
-      </div>
+      )}
 
       <div className={styles.row}>
         {' '}
