@@ -14,7 +14,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.center_name}
             onChange={handleInputChange}
             name="center_name"
@@ -29,7 +28,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
           <input
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.center_admin}
             onChange={handleInputChange}
             name="center_admin"
@@ -47,7 +45,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
           
             type="number"
             className={styles.input}
-            variant="filled"
             value={values.telephone_number}
             onChange={handleInputChange}
             name="telephone_number"
@@ -64,7 +61,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
             required
             type="number"
             className={styles.input}
-            variant="filled"
             value={values.mobile_number}
             onChange={handleInputChange}
             name="mobile_number"
@@ -82,7 +78,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
           <input
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.website_address}
             onChange={handleInputChange}
             name="website_address"
@@ -98,7 +93,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
           <input
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.email_address}
             onChange={handleInputChange}
             name="email_address"
@@ -115,7 +109,6 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
         <input
           required
           className={styles.longInput}
-          variant="filled"
           value={values.company_address}
           onChange={handleInputChange}
           name="company_address"

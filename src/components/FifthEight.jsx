@@ -48,7 +48,6 @@ const FifthEight = ({ handleInputChange, values }) => {
           <input
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.accounting_software_name}
             onChange={handleInputChange}
             name="accounting_software_name"
@@ -183,7 +182,7 @@ const FifthEight = ({ handleInputChange, values }) => {
             type="text"
             className={styles.input}
             variant="filled"
-            value={values.future_districts}
+            value={values.future_distric}
             onChange={handleInputChange}
             name="future_districts"
           />

@@ -15,7 +15,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.broadcasting_way}
             onChange={handleInputChange}
             name="broadcasting_way"
@@ -35,7 +34,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.advertising_websites}
             onChange={handleInputChange}
             name="advertising_websites"
@@ -55,7 +53,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.using_divar}
             onChange={handleInputChange}
             name="using_divar"
@@ -75,7 +72,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.which_platforms}
             onChange={handleInputChange}
             name="which_platforms"
@@ -95,7 +91,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.longInput}
-            variant="filled"
             value={values.advertising_system}
             onChange={handleInputChange}
             name="advertising_system"
@@ -148,7 +143,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="number"
             className={styles.input}
-            variant="filled"
             value={values.advertising_budget}
             onChange={handleInputChange}
             name="advertising_budget"
@@ -168,7 +162,6 @@ const FourthEight = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.best_advertising}
             onChange={handleInputChange}
             name="best_advertising"

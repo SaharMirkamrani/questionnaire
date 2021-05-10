@@ -9,7 +9,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="text"
             className={styles.longInput}
-            variant="filled"
             value={values.services_description}
             onChange={handleInputChange}
             name="services_description"
@@ -28,7 +27,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.job_hour_start}
             onChange={handleInputChange}
             name="job_hour_start"
@@ -39,7 +37,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.job_hour_end}
             onChange={handleInputChange}
             name="job_hour_end"
@@ -72,7 +69,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.suport_hour_end}
             onChange={handleInputChange}
             name="suport_hour_end"
@@ -93,7 +89,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.advisors_count}
             onChange={handleInputChange}
             name="advisors_count"
@@ -114,7 +109,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.remoteadvisors}
             onChange={handleInputChange}
             name="remoteadvisors"
@@ -157,7 +151,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
             required
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.remote_customer_count}
             onChange={handleInputChange}
             name="remote_customer_count"
@@ -179,7 +172,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
             required
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.sellers_count}
             onChange={handleInputChange}
             name="sellers_count"
@@ -190,7 +182,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
             required
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.buyers_count}
             onChange={handleInputChange}
             name="buyers_count"
@@ -213,7 +204,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
             required
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.renters_count}
             onChange={handleInputChange}
             name="renters_count"
@@ -224,7 +214,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
             required
             type="number"
             className={styles.shortInput}
-            variant="filled"
             value={values.tenant_count}
             onChange={handleInputChange}
             name="tenant_count"
@@ -245,7 +234,6 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <input
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.other_customers_count}
             onChange={handleInputChange}
             name="other_customers_count"

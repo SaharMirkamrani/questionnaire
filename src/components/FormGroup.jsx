@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from '../styles/Main.module.css';
 import FirstEight from './FirstEight';
 import SecondFour from './SecondFour';
@@ -59,14 +59,13 @@ const initialValues = {
   online_datastorage: '',
   offer: '',
   cooperation: '',
-  time_stamp: '',
+  time_stamp: new Date().toLocaleString(),
 };
 
 const Form = () => {
   const [values, setValues] = useState(initialValues);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setValues((prev) => {
       return { ...prev, [name]: value };
     });
@@ -75,13 +74,11 @@ const Form = () => {
   const handleCheckboxChange = (e) => {
     const { name } = e.target;
     if (e.target.checked) {
-      console.log('check');
       setValues({
         ...values,
         services: [...values.services, name],
       });
     } else {
-      console.log('uncheck');
       setValues({
         ...values,
         services: [...values.services],
@@ -123,13 +120,19 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const article = values;
     axios
-      .post('http://survey.pillot.ir/admin/Questionnaire/API/_getall', article)
-      .then((response) => console.log(response));
+      .post({
+        url: 'http://survey.pillot.ir/admin/Questionnaire/API/_getall',
+        header: { token: 'test' },
+        data: values,
+      })
+      .then((response) => console.log(response))
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
-	//in the post request  header {token: "test"}
+  //in the post request  header {token: "test"}
 
   console.log(values);
 
@@ -146,10 +149,7 @@ const Form = () => {
         <SecondFour handleInputChange={handleInputChange} values={values} />
         <Checkbox handleCheckboxChange={handleCheckboxChange} values={values} />
         <ThirdTen handleInputChange={handleInputChange} values={values} />
-        <FourthEight
-          handleInputChange={handleInputChange}
-          values={values}
-        />
+        <FourthEight handleInputChange={handleInputChange} values={values} />
         <FifthEight handleInputChange={handleInputChange} values={values} />
         <LastNine handleInputChange={handleInputChange} values={values} />
       </div>

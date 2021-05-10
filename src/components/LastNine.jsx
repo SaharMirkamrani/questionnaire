@@ -134,7 +134,6 @@ const LastNine = ({ handleInputChange, values }) => {
         <textarea
           required
           className={styles.longInput}
-          variant="filled"
           value={values.offer}
           onChange={handleInputChange}
           name="offer"

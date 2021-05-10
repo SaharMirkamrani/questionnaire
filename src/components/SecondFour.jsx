@@ -13,7 +13,6 @@ const SecondFour = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.name}
             onChange={handleInputChange}
             name="name"
@@ -28,7 +27,6 @@ const SecondFour = ({ handleInputChange, values }) => {
             required
             type="text"
             className={styles.input}
-            variant="filled"
             value={values.lastname}
             onChange={handleInputChange}
             name="lastname"
@@ -55,7 +53,6 @@ const SecondFour = ({ handleInputChange, values }) => {
           <label className={styles.label}> * آدرس محل سکونت : </label>
           <input
             className={styles.longInput}
-            variant="filled"
             value={values.home_address}
             onChange={handleInputChange}
             name="home_address"
