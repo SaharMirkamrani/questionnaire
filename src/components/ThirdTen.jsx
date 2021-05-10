@@ -5,7 +5,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
     <>
       <div className={styles.row}>
         <div className={styles.singleInput}>
-          <label className={styles.label}> * خدمات دیگر (توضیح دهید) : </label>
+          <label className={styles.label}> خدمات دیگر (توضیح دهید) : </label>
           <input
             type="text"
             className={styles.longInput}
@@ -19,10 +19,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.biggerAlignLabels}>
-              {' '}
-              * ساعت کاری از{' '}
-            </div>{' '}
+            <div className={styles.biggerAlignLabels}> ساعت کاری از </div>{' '}
           </label>
           <input
             type="number"
@@ -52,7 +49,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.biggerAlignLabels}>
               {' '}
-              * ساعت پاسخگویی از
+              ساعت پاسخگویی از
             </div>{' '}
           </label>
           <input
@@ -83,7 +80,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.biggerAlignLabels}>
               {' '}
-              * تعداد مشاور حاضر در محل
+              تعداد مشاور حاضر در محل
             </div>{' '}
           </label>
           <input
@@ -103,7 +100,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.biggerAlignLabels}>
               {' '}
-              * تعداد مشاور غیر حضوری{' '}
+              تعداد مشاور غیر حضوری{' '}
             </div>
           </label>
           <input
@@ -124,6 +121,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
             <div className={styles.biggerAlignLabels}>
               {' '}
               تعداد مراجعین حضوری در روز{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -145,6 +143,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.biggerAlignLabels}>
               تعداد مراجعین غیر حضوری در روز{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -163,7 +162,8 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <label className={styles.label}>
             {' '}
             <div className={styles.hugeAlignLabels}>
-              تعداد مراجعین مربوط به خرید و فروش روزانه :
+              تعداد مراجعین مربوط به خرید و فروش روزانه :{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
 
@@ -195,7 +195,8 @@ const ThirdTen = ({ handleInputChange, values }) => {
           <label className={styles.label}>
             {' '}
             <div className={styles.hugeAlignLabels}>
-              تعداد مراجعین مربوط به رهن و اجاره روزانه :
+              تعداد مراجعین مربوط به رهن و اجاره روزانه :{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
 
@@ -228,7 +229,7 @@ const ThirdTen = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.biggerAlignLabels}>
               {' '}
-              * تعداد مراجعین موارد دیگر{' '}
+              تعداد مراجعین موارد دیگر{' '}
             </div>
           </label>
           <input

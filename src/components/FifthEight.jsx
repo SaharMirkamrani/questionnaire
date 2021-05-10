@@ -12,7 +12,8 @@ const FifthEight = ({ handleInputChange, values }) => {
       <div className={styles.row}>
         <div className={styles.singleInput}>
           <label className={styles.label}>
-            آیا از نرم افزار مالی استفاده میکنید ؟
+            آیا از نرم افزار مالی استفاده میکنید ؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
             بلی{' '}
@@ -42,7 +43,7 @@ const FifthEight = ({ handleInputChange, values }) => {
         <div className={styles.singleInput}>
           <label className={styles.label}>
             <div className={styles.biggerAlignLabels}>
-              * از چه نرم افزاری استفاده میکنید ؟{' '}
+              از چه نرم افزاری استفاده میکنید ؟{' '}
             </div>
           </label>
           <input
@@ -57,7 +58,7 @@ const FifthEight = ({ handleInputChange, values }) => {
       <div className={styles.row}>
         <div>
           <label className={styles.label}>
-            * از عملکرد نرم افزار مورد استفاده راضی هستید ؟
+            از عملکرد نرم افزار مورد استفاده راضی هستید ؟
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -87,7 +88,7 @@ const FifthEight = ({ handleInputChange, values }) => {
         <div className={styles.singleInput}>
           <label className={styles.label}>
             <div className={styles.biggerAlignLabels}>
-              * برای نرم افزار چه مبلغی پرداخت میکنید ؟{' '}
+              برای نرم افزار چه مبلغی پرداخت میکنید ؟{' '}
             </div>
           </label>
           <input
@@ -107,7 +108,8 @@ const FifthEight = ({ handleInputChange, values }) => {
         <div>
           <label className={styles.label}>
             در صورت نداشتن نرم افزار حسابداری و مالی از قبل تمایل به استفاده از
-            یک نرم افزار مناسب و تخصصی برای شغلتان دارید ؟
+            یک نرم افزار مناسب و تخصصی برای شغلتان دارید ؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}> *</div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -136,7 +138,7 @@ const FifthEight = ({ handleInputChange, values }) => {
         <div>
           <label className={styles.label}>
             حاضر به پرداخت چه بودجه ای در قبال دریافت نرم افزار کاربردی مالی
-            هستید ؟
+            هستید ؟ <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
           <input
             required
@@ -156,7 +158,8 @@ const FifthEight = ({ handleInputChange, values }) => {
           <label className={styles.label}>
             {' '}
             <div className={styles.biggerAlignLabels}>
-              در چه مناطقی فعالیت دارید ؟
+              در چه مناطقی فعالیت دارید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -175,7 +178,8 @@ const FifthEight = ({ handleInputChange, values }) => {
         <div>
           <label className={styles.label}>
             آیا تمایل به فعالیت در مناطق دیگر دارید؟ در صورت تمایل منطقه مورد
-            نظر را ذکر کنید .
+            نظر را ذکر کنید .{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
           <input
             required

@@ -1,12 +1,14 @@
 import styles from '../styles/Main.module.css';
 
 const Checkbox = ({ handleCheckboxChange, values }) => {
-  
   return (
     <>
       <div className={styles.row}>
         <div className={styles.singleInput}>
-          <label className={styles.label}>نوع خدمات قابل ارایه : </label>
+          <label className={styles.label}>
+            نوع خدمات قابل ارایه{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div> :{' '}
+          </label>
           <label style={{ margin: '0px 10px' }} htmlFor="services">
             خرید و فروش
           </label>

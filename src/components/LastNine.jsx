@@ -4,9 +4,10 @@ const LastNine = ({ handleInputChange, values }) => {
   return (
     <>
       <div className={styles.row}>
-      <div className={styles.singleInput}>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
-            آیا با همکاران خود در منطقه و خارج از منطقه همکاری دارید؟
+            آیا با همکاران خود در منطقه و خارج از منطقه همکاری دارید؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -33,10 +34,11 @@ const LastNine = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-      <div className={styles.singleInput}>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             تمایل به همکاری و به اشتراک گذاری دو طرفه با رعایت شرایط مطمِن با
-            همکاران را دارید ؟
+            همکاران را دارید ؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -62,9 +64,10 @@ const LastNine = ({ handleInputChange, values }) => {
         </div>
       </div>
       <div className={styles.row}>
-      <div className={styles.singleInput}>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
-            تمایل به بررسی و مدیریت سیستمی مشاوران خود دارید ؟
+            تمایل به بررسی و مدیریت سیستمی مشاوران خود دارید ؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -91,10 +94,11 @@ const LastNine = ({ handleInputChange, values }) => {
       </div>
 
       <div className={styles.row}>
-      <div className={styles.singleInput}>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
             آیا با فایل کردن و بایگانی سیستمی و دسترسی به تمام فایل ها در هر کجا
-            و هر زمان به صورت آنلاین و آفلاین موافق هستید ؟
+            و هر زمان به صورت آنلاین و آفلاین موافق هستید ؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">
@@ -126,10 +130,10 @@ const LastNine = ({ handleInputChange, values }) => {
         </h4>
       </div>
       <div className={styles.column}>
-
         <label className={styles.label}>
           لطفا نظر کلی خودتون رو در ارتباط با پیلوت بفرمایید تا ما بتوانیم بیشتر
-          در خدمت رسانی به شما تلاش کنیم .
+          در خدمت رسانی به شما تلاش کنیم .{' '}
+          <div style={{ color: 'red', display: 'inline' }}>*</div>
         </label>
         <textarea
           required
@@ -138,12 +142,13 @@ const LastNine = ({ handleInputChange, values }) => {
           onChange={handleInputChange}
           name="offer"
         />
-        </div>
+      </div>
 
       <div className={styles.row}>
-      <div className={styles.singleInput}>
+        <div className={styles.singleInput}>
           <label className={styles.label}>
-            با توجه به تمام توضیحات تمایل به همکاری با پیلوت را دارید ؟
+            با توجه به تمام توضیحات تمایل به همکاری با پیلوت را دارید ؟{' '}
+            <div style={{ color: 'red', display: 'inline' }}>*</div>
           </label>
 
           <label style={{ margin: '0px 10px' }} htmlFor="yes">

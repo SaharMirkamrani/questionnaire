@@ -121,18 +121,21 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post({
-        url: 'http://survey.pillot.ir/admin/Questionnaire/API/_getall',
-        header: { token: 'test' },
-        data: values,
-      })
+      .post(
+        'https://survey.pillot.ir/admin/Questionnaire/API/_getall',
+        { ...values },
+        {
+          headers: {
+            Authorization: 'test',
+            'Access-Control-Allow-Origin': '*',
+          },
+        }
+      )
       .then((response) => console.log(response))
       .catch((error) => {
         console.error(error);
       });
   };
-
-  //in the post request  header {token: "test"}
 
   console.log(values);
 

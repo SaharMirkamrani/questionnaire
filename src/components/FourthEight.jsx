@@ -9,6 +9,7 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.hugeAlignLabels}>
               از چه طریقی اطلاع رسانی میکنید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -28,6 +29,7 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.hugeAlignLabels}>
               آیا با سایت های تبلیغاتی کار میکنید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -47,6 +49,7 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.hugeAlignLabels}>
               آیا از پرتال های معرفی مثل دیوار استفاده میکنید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -66,6 +69,7 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.hugeAlignLabels}>
               از چه سایت هایی برای معرفی فایل ها استفاده میکنید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -85,6 +89,7 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.hugeAlignLabels}>
               جهت جذب مشتری چه تبلیغاتی انجام میدهید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input
@@ -104,6 +109,7 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.hugeAlignLabels}>
               آیا تمایل دارید برای جذب مشتری بیشتر هزینه کنید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
 
@@ -136,7 +142,8 @@ const FourthEight = ({ handleInputChange, values }) => {
             {' '}
             <div className={styles.biggerAlignLabels}>
               {' '}
-              چقدر بودجه تبلیغاتی دارید ؟
+              چقدر بودجه تبلیغاتی دارید ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>{' '}
           </label>
           <input
@@ -155,7 +162,8 @@ const FourthEight = ({ handleInputChange, values }) => {
           <label className={styles.label}>
             {' '}
             <div className={styles.biggerAlignLabels}>
-              بهترین نوع تبلیغات برای کار شما چیست ؟
+              بهترین نوع تبلیغات برای کار شما چیست ؟{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div>
             </div>
           </label>
           <input

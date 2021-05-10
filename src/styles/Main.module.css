@@ -24,17 +24,17 @@
 }
 
 .alignLabels {
-  width: 120px;
+  width: 130px;
   text-align: right;
 }
 
 .biggerAlignLabels {
-  width: 220px;
+  width: 230px;
   text-align: right;
 }
 
 .hugeAlignLabels {
-  width: 350px;
+  width: 360px;
   text-align: right;
 }
 

@@ -7,7 +7,9 @@ const SecondFour = ({ handleInputChange, values }) => {
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}>نام :</div>{' '}
+            <div className={styles.alignLabels}>
+              نام <div style={{ color: 'red', display: 'inline' }}>*</div> :
+            </div>{' '}
           </label>
           <input
             required
@@ -21,7 +23,11 @@ const SecondFour = ({ handleInputChange, values }) => {
 
         <div className={styles.singleInput}>
           <label className={styles.label}>
-            <div className={styles.alignLabels}> نام خانوادگی :</div>{' '}
+            <div className={styles.alignLabels}>
+              {' '}
+              نام خانوادگی{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div> :
+            </div>{' '}
           </label>
           <input
             required
@@ -38,7 +44,7 @@ const SecondFour = ({ handleInputChange, values }) => {
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}>* تاریخ تولد :</div>{' '}
+            <div className={styles.alignLabels}>تاریخ تولد :</div>{' '}
           </label>
           <input
             placeholder="YYYY/MM/D"
@@ -50,7 +56,7 @@ const SecondFour = ({ handleInputChange, values }) => {
           />
         </div>
         <div className={styles.singleInput}>
-          <label className={styles.label}> * آدرس محل سکونت : </label>
+          <label className={styles.label}> آدرس محل سکونت : </label>
           <input
             className={styles.longInput}
             value={values.home_address}

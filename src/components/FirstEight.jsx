@@ -1,14 +1,26 @@
 import styles from '../styles/Main.module.css';
 
-const FirstEight = ({ handleInputChange, values, validatePhone, validateMobilephone, validateEmail }) => {
-  console.log(values)
+const FirstEight = ({
+  handleInputChange,
+  values,
+  validatePhone,
+  validateMobilephone,
+  validateEmail,
+}) => {
+  console.log(values);
   return (
     <>
       <div className={styles.row}>
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}> نام مرکز : </div>
+            <div className={styles.alignLabels}>
+              {' '}
+              نام مرکز <div style={{ color: 'red', display: 'inline' }}>
+                *
+              </div>{' '}
+              :{' '}
+            </div>
           </label>
           <input
             required
@@ -23,7 +35,7 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}> * نام مدیر مرکز :</div>{' '}
+            <div className={styles.alignLabels}> نام مدیر مرکز :</div>{' '}
           </label>
           <input
             type="text"
@@ -39,23 +51,25 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}> * تلفن ثابت : </div>
+            <div className={styles.alignLabels}> تلفن ثابت : </div>
           </label>
           <input
-          
             type="number"
             className={styles.input}
             value={values.telephone_number}
             onChange={handleInputChange}
             name="telephone_number"
-            onBlur={()=>validatePhone(values.telephone_number)}
+            onBlur={() => validatePhone(values.telephone_number)}
           />
         </div>
 
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}>تلفن همراه :</div>{' '}
+            <div className={styles.alignLabels}>
+              تلفن همراه{' '}
+              <div style={{ color: 'red', display: 'inline' }}>*</div> :
+            </div>{' '}
           </label>
           <input
             required
@@ -64,7 +78,7 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
             value={values.mobile_number}
             onChange={handleInputChange}
             name="mobile_number"
-            onBlur={()=>validateMobilephone(values.mobile_number)}
+            onBlur={() => validateMobilephone(values.mobile_number)}
           />
         </div>
       </div>
@@ -73,7 +87,7 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}> * آدرس سایت : </div>
+            <div className={styles.alignLabels}> آدرس سایت : </div>
           </label>
           <input
             type="text"
@@ -88,7 +102,7 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
         <div className={styles.singleInput}>
           <label className={styles.label}>
             {' '}
-            <div className={styles.alignLabels}> * آدرس ایمیل :</div>{' '}
+            <div className={styles.alignLabels}> آدرس ایمیل :</div>{' '}
           </label>
           <input
             type="text"
@@ -96,7 +110,7 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
             value={values.email_address}
             onChange={handleInputChange}
             name="email_address"
-            onBlur={()=>validateEmail(values.email_address)}
+            onBlur={() => validateEmail(values.email_address)}
           />
         </div>
       </div>
@@ -104,7 +118,10 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
       <div className={styles.singleInput}>
         <label className={styles.label}>
           {' '}
-          <div className={styles.alignLabels}> آدرس : </div>
+          <div className={styles.alignLabels}>
+            {' '}
+            آدرس <div style={{ color: 'red', display: 'inline' }}>*</div> :{' '}
+          </div>
         </label>
         <input
           required
@@ -116,7 +133,13 @@ const FirstEight = ({ handleInputChange, values, validatePhone, validateMobileph
       </div>
 
       <div className={styles.singleInput}>
-        <label className={styles.label}> <div className={styles.alignLabels}> سمت : </div></label>
+        <label className={styles.label}>
+          {' '}
+          <div className={styles.alignLabels}>
+            {' '}
+            سمت <div style={{ color: 'red', display: 'inline' }}>*</div> :{' '}
+          </div>
+        </label>
         <label style={{ margin: '0px 10px' }} htmlFor="manager">
           مدیر
         </label>
