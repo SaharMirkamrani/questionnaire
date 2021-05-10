@@ -86,38 +86,6 @@ const Form = () => {
     }
   };
 
-  const validatePhone = (input) => {
-    let phone = /^\d{8}$/;
-    if (input.match(phone)) {
-      return true;
-    } else {
-      alert('شماره تلفن باید 8 رقمی باشد');
-      return false;
-    }
-  };
-
-  const validateMobilephone = (input) => {
-    let mobile = /^\d{11}$/;
-    if (input.match(mobile)) {
-      return true;
-    } else {
-      alert('شماره موبایل باید 11 رقمی باشد');
-      return false;
-    }
-  };
-
-  const validateEmail = (mail) => {
-    if (
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-        mail
-      )
-    ) {
-      return true;
-    }
-    alert('لطفا آدرس ایمیل صحیح را وارد کنید.');
-    return false;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
@@ -146,13 +114,7 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.main}>
-        <FirstEight
-          handleInputChange={handleInputChange}
-          values={values}
-          validatePhone={validatePhone}
-          validateMobilephone={validateMobilephone}
-          validateEmail={validateEmail}
-        />
+        <FirstEight handleInputChange={handleInputChange} values={values} />
         <SecondFour handleInputChange={handleInputChange} values={values} />
         <Checkbox handleCheckboxChange={handleCheckboxChange} values={values} />
         <ThirdTen handleInputChange={handleInputChange} values={values} />

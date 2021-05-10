@@ -1,12 +1,42 @@
 import styles from '../styles/Main.module.css';
+import { useState } from 'react';
+import ValidationError from './ValidationError';
 
-const FirstEight = ({
-  handleInputChange,
-  values,
-  validatePhone,
-  validateMobilephone,
-  validateEmail,
-}) => {
+const FirstEight = ({ handleInputChange, values }) => {
+  const [phoneError, setPhoneError] = useState(false);
+  const [mobileError, setMobileError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+
+  const validatePhone = (input) => {
+    let phone = /^\d{8}$/;
+    if (input.match(phone)) {
+      setPhoneError(false);
+    } else {
+      setPhoneError(true);
+    }
+  };
+
+  const validateMobilephone = (input) => {
+    let mobile = /^\d{11}$/;
+    if (mobile.test(input)) {
+      setMobileError(false);
+    } else {
+      setMobileError(true);
+    }
+  };
+
+  const validateEmail = (mail) => {
+    if (
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+        mail
+      )
+    ) {
+      setEmailError(false);
+      return true;
+    }
+    setEmailError(true);
+  };
+
   console.log(values);
   return (
     <>
@@ -59,8 +89,11 @@ const FirstEight = ({
             value={values.telephone_number}
             onChange={handleInputChange}
             name="telephone_number"
-            onBlur={() => validatePhone(values.telephone_number)}
+            onBlurCapture={() => validatePhone(values.telephone_number)}
           />
+          {phoneError && (
+            <ValidationError text={'شماره تلفن باید 8 رقم باشد.'} />
+          )}
         </div>
 
         <div className={styles.singleInput}>
@@ -78,8 +111,11 @@ const FirstEight = ({
             value={values.mobile_number}
             onChange={handleInputChange}
             name="mobile_number"
-            onBlur={() => validateMobilephone(values.mobile_number)}
+            onBlurCapture={() => validateMobilephone(values.mobile_number)}
           />
+          {mobileError && (
+            <ValidationError text={'شماره موبایل باید 11 رقم باشد.'} />
+          )}
         </div>
       </div>
 
@@ -110,8 +146,11 @@ const FirstEight = ({
             value={values.email_address}
             onChange={handleInputChange}
             name="email_address"
-            onBlur={() => validateEmail(values.email_address)}
+            onBlurCapture={() => validateEmail(values.email_address)}
           />
+          {emailError && (
+            <ValidationError text={'لطفا ایمیل معتبر وارد کنید.'} />
+          )}
         </div>
       </div>
 
